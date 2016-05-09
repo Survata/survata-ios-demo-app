@@ -2,10 +2,24 @@
 
 ## 1. Clone the git repository locally. 
 
+Make sure you have the latest updates to the repository.
+ie. ‘git pull’
+
+Note: We assume that you already have a project in Xcode and that this project is opened in Xcode 7 or later.
+The SDK supports iOS 8.0 and later.
+
 ## 2. Run "pod install" in order to install all the necessary modules. 
 If your computer doesn't recognize pod, it's because you don't have Cocoapods installed. Go install it!
 
 Once you have that installed, it should create a .xcworkspace. Use that instead of the .xcodeproj. 
+
+while "pod install" is running, if it begins to hang for a long time:
+try running these commands...
+```
+pod repo remove master
+pod setup
+pod install
+```
 
 ## 3. Integrating The Survata SDK
 You can display it in your project however you like, but I chose to use a UIView, an ActivityIndicatorView, and a Button in order to trigger the creation of the survey. 
