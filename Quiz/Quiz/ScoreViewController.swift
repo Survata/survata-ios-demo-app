@@ -13,9 +13,23 @@ import UIKit
 class ScoreViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var playAgainButton: UIButton!
+    @IBOutlet weak var whatHappenedLabel: UILabel!
     override func viewDidLoad() {
+        
+        if failed == true {
+            whatHappenedLabel.sizeToFit()
+            whatHappenedLabel.text = "You managed to answer " + String(qsAnswered) + " questions!"
+            whatHappenedLabel.sizeToFit()
+
+        } else {
+            whatHappenedLabel.text = "You managed to answer all the questions and have " + String(score) + " left!"
+            whatHappenedLabel.sizeToFit()
+
+        }
+        whatHappenedLabel.sizeToFit()
+        
         playAgainButton.backgroundColor = UIColor.whiteColor()
-        //scoreLabel.text = String(counter1)
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
