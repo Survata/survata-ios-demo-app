@@ -275,7 +275,11 @@ class QuestionTableViewController: UIViewController {
     
     @IBAction func startSurvey(sender: UIButton) {
         if (survey != nil){
-            counter1 += 10
+            if(counter1 + 20 <= 100){
+                counter1 += 20
+            } else {
+                counter1 = 100
+            }
             survey.createSurveyWall { result in
                 delay(2) {
                     SVProgressHUD.dismiss()
