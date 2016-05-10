@@ -339,15 +339,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="lbS-5J-d3r">
-                                <rect key="frame" x="-24" y="-14" width="423" height="707"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="lbS-5J-d3r">
+                                <rect key="frame" x="-10" y="-26" width="395" height="719"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5W-78-kIa">
-                                <rect key="frame" x="99" y="521" width="193" height="73"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="73" id="Ebx-4D-cmB"/>
-                                </constraints>
+                                <rect key="frame" x="152" y="564" width="71" height="30"/>
                                 <state key="normal" title="Play Again">
                                     <color key="titleColor" red="0.0" green="0.46666666670000001" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -360,11 +357,8 @@
                                     <action selector="playAgain:" destination="4Ka-wA-UDg" eventType="touchUpInside" id="XMf-cQ-Kga"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You managed to answer 7 questions!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="VTp-3q-UBH">
-                                <rect key="frame" x="27" y="206" width="320" height="173"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="173" id="Z7t-OM-9CG"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You managed to answer 7 questions!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="VTp-3q-UBH">
+                                <rect key="frame" x="10" y="206" width="355" height="66"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -372,16 +366,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="i5W-78-kIa" firstAttribute="leading" secondItem="9ZO-fL-QNK" secondAttribute="leadingMargin" constant="83" id="03Q-os-Zbt"/>
                             <constraint firstItem="VTp-3q-UBH" firstAttribute="centerX" secondItem="9ZO-fL-QNK" secondAttribute="centerX" id="5Pv-pb-kCW"/>
                             <constraint firstAttribute="bottomMargin" secondItem="lbS-5J-d3r" secondAttribute="bottom" constant="-26" id="8Q2-Em-7Eo"/>
-                            <constraint firstItem="lbS-5J-d3r" firstAttribute="top" secondItem="9ZO-fL-QNK" secondAttribute="topMargin" constant="-14" id="Kf7-ig-Be2"/>
-                            <constraint firstItem="lbS-5J-d3r" firstAttribute="leading" secondItem="9ZO-fL-QNK" secondAttribute="leadingMargin" constant="-40" id="LyQ-SD-XtU"/>
+                            <constraint firstItem="VTp-3q-UBH" firstAttribute="width" secondItem="9ZO-fL-QNK" secondAttribute="width" constant="-20" id="FLo-f2-Efl"/>
+                            <constraint firstItem="lbS-5J-d3r" firstAttribute="top" secondItem="9ZO-fL-QNK" secondAttribute="topMargin" constant="-26" id="Kf7-ig-Be2"/>
+                            <constraint firstItem="lbS-5J-d3r" firstAttribute="leading" secondItem="9ZO-fL-QNK" secondAttribute="leadingMargin" constant="-26" id="LyQ-SD-XtU"/>
                             <constraint firstItem="VTp-3q-UBH" firstAttribute="top" secondItem="sL3-FN-9pY" secondAttribute="bottom" constant="186" id="Ry2-Og-nQA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="i5W-78-kIa" secondAttribute="trailing" constant="67" id="dcZ-jx-S4Y"/>
-                            <constraint firstItem="VTp-3q-UBH" firstAttribute="centerX" secondItem="lbS-5J-d3r" secondAttribute="centerX" id="w4i-6X-dDa"/>
+                            <constraint firstItem="lbS-5J-d3r" firstAttribute="centerY" secondItem="9ZO-fL-QNK" secondAttribute="centerY" id="SjN-jk-DBv"/>
+                            <constraint firstItem="lbS-5J-d3r" firstAttribute="centerX" secondItem="9ZO-fL-QNK" secondAttribute="centerX" id="kIv-d2-XbQ"/>
+                            <constraint firstItem="i5W-78-kIa" firstAttribute="centerX" secondItem="9ZO-fL-QNK" secondAttribute="centerX" id="vGL-ml-30a"/>
                             <constraint firstItem="otX-EF-cQY" firstAttribute="top" secondItem="i5W-78-kIa" secondAttribute="bottom" constant="73" id="wk8-cN-q8h"/>
-                            <constraint firstItem="VTp-3q-UBH" firstAttribute="leading" secondItem="9ZO-fL-QNK" secondAttribute="leadingMargin" constant="11" id="xY8-59-H6R"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
