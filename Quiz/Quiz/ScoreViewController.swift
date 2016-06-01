@@ -22,13 +22,13 @@ class ScoreViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     @IBAction func playAgain(sender: UIButton) {
-        let questionTableViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("QuestionTableViewController") as! QuestionTableViewController
+        let questionViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("QuestionViewController") as! QuestionViewController
         score = 0
         for key in entered.keys {
             entered[key] = 0
         }
         
-        self.showViewController(questionTableViewController as! UIViewController, sender: questionTableViewController)
+        self.showViewController(questionViewController as! UIViewController, sender: questionViewController)
     }
     
     override func didReceiveMemoryWarning() {

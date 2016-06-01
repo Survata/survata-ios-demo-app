@@ -363,6 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.survata.SurvataSays;
 				PRODUCT_NAME = "Survata Says";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -378,6 +379,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.survata.SurvataSays;
 				PRODUCT_NAME = "Survata Says";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

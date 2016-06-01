@@ -12,13 +12,6 @@ import SVProgressHUD
 import Greycats
 import Survata
 
-var score = 0
-var entered = [Int: Int]()
-var qsAnswered = 0
-var failed = false 
-
-
-
 
 class QuestionTableViewController: UIViewController {
     
@@ -286,8 +279,8 @@ class QuestionTableViewController: UIViewController {
                     SVProgressHUD.showInfoWithStatus("Network not available")
                 case .Skipped:
                     SVProgressHUD.showInfoWithStatus("Skipped")
-                case .InappropriateAge:
-                    SVProgressHUD.showInfoWithStatus("You're not eligible to take a survey because you're too young.")
+                case .NoSurveyAvailable:
+                    SVProgressHUD.showInfoWithStatus("No survey available")
                 default:
                     SVProgressHUD.showInfoWithStatus("no opp")
                 }
