@@ -41,36 +41,11 @@ class QuestionViewController: UIViewController {
     var survey: Survey!
     var currentQ: Question!
     var counter1:Int = 100
-    //    var counter1:Int = 100 {
-    //        didSet {
-    //            let fractionalProgress = Float(counter1 / 100)
-    //            let animated = counter1 != 0
-    //            progressView.setProgress(fractionalProgress, animated: animated)
-    //            progressLabel.text = String(("\(counter1)%"))
-    //        }
-    //    }
+   
     @IBAction func percentageSliderValueChanged(sender: UISlider) {
         percentage = Int(sender.value)
         percentageLabel.text = "\(percentage)"
     }
-//    @IBAction func upPercentage(sender: UIButton) {
-//        if percentage < 100 {
-//            percentage += 1
-//            percentageSliderValueChanged(percentageSlider)
-//            storePercentage(ind, percentage: percentage)
-//            percentageLabel.text = "\(percentage)"
-//        }
-//    }
-//    
-//    @IBAction func lowerPercentage(sender: UIButton) {
-//        if percentage > 0 {
-//            percentage -= 1
-//            percentageSliderValueChanged(percentageSlider)
-//            storePercentage(ind, percentage: percentage)
-//            percentageLabel.text = "\(percentage)"
-//        }
-//    }
-    
     func randomInt(min: Int, max:Int) -> Int {
         return min + Int(arc4random_uniform(UInt32(max - min + 1)))
     }
@@ -90,8 +65,6 @@ class QuestionViewController: UIViewController {
         } else {
             print(ind)
             qsAnswered += 1
-            //questionLabelTop.text = "Question #" + String(qsAnswered + 1)
-//            percentage = 50
             percentageLabel.text = String(percentage)
             currentQ = questions[ind]
             if ind == entered.count - 1{
@@ -99,11 +72,6 @@ class QuestionViewController: UIViewController {
                 
                 self.showViewController(scoreViewController as! UIViewController, sender: scoreViewController)
             } else {
-                //                print("IND IS: " + String(ind))
-                //                print("COUNTER IS: " + String(counter1))
-                //                print("ACTUAL IS: " + String(actualPercentages[ind]))
-                //                print("WHAT YOU ENTERED IS: "+String(entered[ind]))
-                //                print("DIFFERENCE IS: " + String(difference))
                 counter1 -= difference
                 lifeLabelTest.text = "\(counter1)%"
                 randomNumber = randomInt(0, max: entered.count)
@@ -117,7 +85,7 @@ class QuestionViewController: UIViewController {
    
     
     func checkIfEnd(counter1: Int){
-        //        print("Game is over")
+        
         let scoreViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("ScoreViewController") as! ScoreViewController
         self.showViewController(scoreViewController as! UIViewController, sender: scoreViewController)
     }
@@ -127,30 +95,10 @@ class QuestionViewController: UIViewController {
         
         lifeLabelTest.text = "\(counter1)%"
         takeSurveyLabel.text = "Take a survey to increase your life by 20%!"
-        //progressView.progress = Float(100)
-        //questionLabel.sizeToFit()
         surveyIndicator.hidden = true
         loadSampleQuestions()
     }
-    
-//    func handleLongUpPress(gesture: UILongPressGestureRecognizer) {
-//        if(gesture.state == .Began){
-//            percentage = percentage + 10
-//            storePercentage(ind, percentage: percentage)
-//            if percentage < 100 {
-//                percentageLabel.text = "\(percentage)"
-//            }
-//        }
-//    }
-//    func handleLongDownPress(gesture: UILongPressGestureRecognizer) {
-//        if(gesture.state == .Began){
-//            percentage = percentage - 10
-//            storePercentage(ind, percentage: percentage)
-//            if percentage > 0 {
-//                percentageLabel.text = "\(percentage)"
-//            }
-//        }
-//    }
+
     
     func loadSampleQuestions() {
         let q1 = Question(name: "Guess the % of people who said BLUE was their favorite color.", percentage: 30)
@@ -256,7 +204,6 @@ class QuestionViewController: UIViewController {
     }
     
     func showSurveyButton() {
-        //surveyMask.hidden = false
         surveyIndicator.stopAnimating()
     }
     
