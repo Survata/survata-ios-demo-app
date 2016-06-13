@@ -23,7 +23,7 @@ class ScoreViewController: UIViewController {
     }
     @IBAction func playAgain(sender: UIButton) {
         let questionViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("QuestionViewController") as! QuestionViewController
-        score = 0
+        qsAnswered = 0
         for key in entered.keys {
             entered[key] = 0
         }

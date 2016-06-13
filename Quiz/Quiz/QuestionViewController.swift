@@ -12,7 +12,7 @@ import SVProgressHUD
 import Greycats
 import Survata
 
-var score = 0
+
 var entered = [Int: Int]()
 var qsAnswered = 0
 var failed = false
@@ -50,22 +50,23 @@ class QuestionViewController: UIViewController {
         return min + Int(arc4random_uniform(UInt32(max - min + 1)))
     }
     
-    func storePercentage(currentInd: Int, percentage: Int) {
+    func storePercentage(currentInd: Int, percentage: Int) -> Int {
         entered[currentInd] = percentage
+        return percentage
     }
     
     @IBAction func nextQuestion(sender: UIButton) {
-        var difference = abs(entered[ind]! - actualPercentages[ind])
+        var guess = storePercentage(ind, percentage: Int(percentageSlider.value))
+        var difference = abs(guess - actualPercentages[ind])
         var randomNumber = randomInt(0, max: entered.count)
         if (counter1 - difference <= 0){
             lifeLabelTest.text = "0%"
-            checkIfEnd(counter1)
             let scoreViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("ScoreViewController") as! ScoreViewController
             self.showViewController(scoreViewController as! UIViewController, sender: scoreViewController)
         } else {
             print(ind)
             qsAnswered += 1
-            percentageLabel.text = String(percentage)
+            //percentageLabel.text = String(percentage)
             currentQ = questions[ind]
             if ind == entered.count - 1{
                 let scoreViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("ScoreViewController") as! ScoreViewController

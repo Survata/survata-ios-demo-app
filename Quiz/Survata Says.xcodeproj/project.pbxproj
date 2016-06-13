@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		1A5E3CC04892C3DF3428C822 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD85AD184445E410B926F7A /* Pods.framework */; };
 		B58BFE811C965C8C002EC9F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58BFE801C965C8C002EC9F1 /* AppDelegate.swift */; };
-		B58BFE831C965C8C002EC9F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58BFE821C965C8C002EC9F1 /* ViewController.swift */; };
 		B58BFE861C965C8C002EC9F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58BFE841C965C8C002EC9F1 /* Main.storyboard */; };
 		B58BFE881C965C8C002EC9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58BFE871C965C8C002EC9F1 /* Assets.xcassets */; };
 		B58BFE8B1C965C8C002EC9F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58BFE891C965C8C002EC9F1 /* LaunchScreen.storyboard */; };
 		FE0EAB581C98A2550018290E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0EAB551C98A2550018290E /* Question.swift */; };
-		FE0EAB5A1C98A2550018290E /* QuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0EAB571C98A2550018290E /* QuestionTableViewController.swift */; };
 		FE0EAB5C1C98A4DF0018290E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0EAB5B1C98A4DF0018290E /* Settings.swift */; };
 		FE7107231C9B5F55008988A9 /* objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7107221C9B5F55008988A9 /* objects.swift */; };
 		FE7107251C9C7CF2008988A9 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7107241C9C7CF2008988A9 /* ScoreViewController.swift */; };
@@ -29,13 +27,11 @@
 		9AD85AD184445E410B926F7A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58BFE7D1C965C8C002EC9F1 /* Survata Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survata Says.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58BFE801C965C8C002EC9F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B58BFE821C965C8C002EC9F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B58BFE851C965C8C002EC9F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B58BFE871C965C8C002EC9F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B58BFE8A1C965C8C002EC9F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B58BFE8C1C965C8C002EC9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE0EAB551C98A2550018290E /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		FE0EAB571C98A2550018290E /* QuestionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewController.swift; sourceTree = "<group>"; };
 		FE0EAB5B1C98A4DF0018290E /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		FE7107221C9B5F55008988A9 /* objects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = objects.swift; sourceTree = "<group>"; };
 		FE7107241C9C7CF2008988A9 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
@@ -96,18 +92,16 @@
 			children = (
 				FE7107221C9B5F55008988A9 /* objects.swift */,
 				FE0EAB551C98A2550018290E /* Question.swift */,
-				FE0EAB571C98A2550018290E /* QuestionTableViewController.swift */,
 				FE7107261C9C82A4008988A9 /* StartViewController.swift */,
+				FECC387A1CF3CC5B0043F4F0 /* QuestionViewController.swift */,
 				FE7107241C9C7CF2008988A9 /* ScoreViewController.swift */,
 				FEC7BEB11C9B4F6700E481DE /* Demo.swift */,
 				FE0EAB5B1C98A4DF0018290E /* Settings.swift */,
 				B58BFE801C965C8C002EC9F1 /* AppDelegate.swift */,
-				B58BFE821C965C8C002EC9F1 /* ViewController.swift */,
 				B58BFE841C965C8C002EC9F1 /* Main.storyboard */,
 				B58BFE871C965C8C002EC9F1 /* Assets.xcassets */,
 				B58BFE891C965C8C002EC9F1 /* LaunchScreen.storyboard */,
 				B58BFE8C1C965C8C002EC9F1 /* Info.plist */,
-				FECC387A1CF3CC5B0043F4F0 /* QuestionViewController.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -238,11 +232,9 @@
 				FE0EAB5C1C98A4DF0018290E /* Settings.swift in Sources */,
 				FE0EAB581C98A2550018290E /* Question.swift in Sources */,
 				FE7107231C9B5F55008988A9 /* objects.swift in Sources */,
-				FE0EAB5A1C98A2550018290E /* QuestionTableViewController.swift in Sources */,
 				FE7107271C9C82A4008988A9 /* StartViewController.swift in Sources */,
 				FEC7BEB21C9B4F6700E481DE /* Demo.swift in Sources */,
 				FECC387B1CF3CC5B0043F4F0 /* QuestionViewController.swift in Sources */,
-				B58BFE831C965C8C002EC9F1 /* ViewController.swift in Sources */,
 				B58BFE811C965C8C002EC9F1 /* AppDelegate.swift in Sources */,
 				FE7107251C9C7CF2008988A9 /* ScoreViewController.swift in Sources */,
 			);
