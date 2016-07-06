@@ -32,6 +32,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var surveyMask: GradientView!
     @IBOutlet weak var heart: UIImageView!
     @IBOutlet weak var lifeLabelTest: UILabel!
+    @IBOutlet weak var settingsButton: UIButton!
     
     
     var questions = [Question]()
@@ -41,7 +42,19 @@ class QuestionViewController: UIViewController {
     var survey: Survey!
     var currentQ: Question!
     var counter1:Int = 100
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var demoMode: Bool? {
+        get {
+            return NSUserDefaults.standardUserDefaults().boolForKey("demoModeSettings")
+        }
+    }
+    
    
+    @IBAction func goToSettingsPage(sender: UIButton) {
+        let settingsViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("SettingsTableViewController") as! SettingsTableViewController
+        self.showViewController(settingsViewController as! UIViewController, sender: settingsViewController)
+
+    }
     @IBAction func percentageSliderValueChanged(sender: UISlider) {
         percentage = Int(sender.value)
         percentageLabel.text = "\(percentage)"
@@ -244,11 +257,18 @@ class QuestionViewController: UIViewController {
     
     func createSurvey() {
         if created { return }
-        let option = SurveyOption(publisher: Settings.publisherId)
-        //        option.preview = Settings.previewId
-        //        option.zipcode = Settings.forceZipcode
-        //        option.sendZipcode = Settings.sendZipcode
+        let option = SurveyDebugOption(publisher: Settings.publisherId)
+        if let demoMode = demoMode {
+            if(demoMode){ // Demo Mode On
+                option.testing = true
+                option.preview = "5fd725139884422e9f1bb28f776c702d"// preview id for fixed survata survey
+            }
+        } else { // if demoMode == nil, just assume regular mode
+            option.contentName = String(NSDate())
+        }
+
         option.contentName = String(NSDate())
+        
         survey = Survey(option: option)
         
         survey.create {[weak self] result in

@@ -12,11 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
+    var demoMode: Bool?
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
 		UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent;
+        if !NSUserDefaults.standardUserDefaults().boolForKey("isNotFirstLaunch") {
+            //Set isNotFirstLaunch to true and demoMode to false
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "demoModeSettings")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isNotFirstLaunch")
+            
+            //Sync NSUserDefaults
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
 		return true
 	}
 

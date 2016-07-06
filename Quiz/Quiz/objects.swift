@@ -13,11 +13,13 @@ import Survata
 public class SurveyDebugOption: SurveyOption, SurveyDebugOptionProtocol {
     public var preview: String?
     public var zipcode: String?
+    public var testing: Bool?
     public var sendZipcode: Bool = true
     
     public override var json: [String: AnyObject] {
         var option = super.json
         option["preview"] = preview
+        option["testing"] = testing
         return option
     }
 }
