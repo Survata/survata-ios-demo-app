@@ -1070,7 +1070,7 @@
                             </variation>
                         </view>
                         <sections>
-                            <tableViewSection id="s3C-s0-LOh">
+                            <tableViewSection headerTitle="Demo Mode" id="s3C-s0-LOh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DemoModeCell" selectionStyle="default" indentationWidth="10" rowHeight="68" id="1VC-ba-zWk">
                                         <rect key="frame" x="0.0" y="35" width="414" height="68"/>
