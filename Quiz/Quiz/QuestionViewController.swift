@@ -18,12 +18,10 @@ var qsAnswered = 0
 var failed = false
 
 class QuestionViewController: UIViewController {
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var minusButton: UIButton!
+
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var percentageSlider: UISlider!
     @IBOutlet weak var enterButton: UIButton!
-    @IBOutlet weak var surveyView: UIView!
     @IBOutlet weak var takeSurveyLabel: UILabel!
     @IBOutlet weak var takeSurveyButton: UIButton!
     @IBOutlet weak var lifeView: UIView!
