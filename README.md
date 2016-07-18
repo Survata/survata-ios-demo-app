@@ -39,22 +39,21 @@ pod install
 ```
 
 ## 3. Integrating The Survata SDK
+### Step 1
 You can display it in your project however you like, but I chose to use a UIView, an ActivityIndicatorView, and a Button in order to trigger the creation of the survey. 
 ```swift
     @IBOutlet weak var surveyMask: GradientView!
     @IBOutlet weak var surveyIndicator: UIActivityIndicatorView!
     @IBOutlet weak var scoreButton: UIButton!
 ```
-Then, I used the function "createSurvey()" to create the survey. Initialize it with the appropriate properties such as publisherId, zipcode, etc. 
+### Step 2
+Then, I used the function "createSurvey()" to create the survey. Initialize it with the property publisherId. 
 
 ```swift
 func createSurvey() {
         if created { return }
-        let option = SurveyDebugOption(publisher: Settings.publisherId)
-        option.preview = Settings.previewId
-        option.zipcode = Settings.forceZipcode
-        option.sendZipcode = Settings.sendZipcode
-        option.contentName = Settings.contentName
+        let option = SurveyOption(publisher: Settings.publisherId)
+        option.contentName = Settings.contentName // optional
         survey = Survey(option: option)
         
         survey.create {[weak self] result in
@@ -67,8 +66,17 @@ func createSurvey() {
             }
         }
     }
-    
 ```
+
+#### Explaining contentName 
+The contentName property is optional. It enforces that there is one survey per respondent per contentName. For example, if using a survey to unlock a level in a game or an e-book, it allows the publisher to offload enforcing that unlocking to be permanent onto us. 
+
+For example, if there's a game and there's a level 7. If a person playing the game has already earned the survey for level 7, if they request a survey for level 7 again, it shows that they already earned it. 
+
+If you're not doing something like unlocking a level, you don't need to use contentName. If you want to limit for example, one survey per day, you could use something as the date for the contentName. 
+
+### Step 3
+
 As you can probably tell, I created a Settings.swift file to store my information. This is part of it.
 ```swift
 struct Settings {
@@ -79,7 +87,7 @@ struct Settings {
 	static var sendZipcode: Bool = true
 }
 ```
-
+### Step 4 
 If the survey is created successfully, I triggered the showSurveyButton() and showFull() functions to display them.
 ```swift
 func showFull() {
@@ -93,27 +101,36 @@ func showFull() {
         surveyIndicator.stopAnimating()
     }
 ```
-After that, when the button is displayed, I defined a function called startSurvey() that will display the survey once the button is tapped (createSurveyWall()). 
+### Step 5 
+After that, when the button is displayed, I defined a function called startSurvey() that will display the survey once the button is tapped (createSurveyWall()). It also returns the events -- COMPLETED, CANCELED, CREDIT_EARNED, NETWORK_NOT_AVAILABLE, and NO_SURVEY_AVAILABLE (ex. people under 13, people taking multiple surveys and being capped at our frequency cap). 
 ```swift
-@IBAction func startSurvey(sender: UIButton) {
+ @IBAction func startSurvey(sender: UIButton) {
         if (survey != nil){
-            score -= 100
+            if(counter1 + 20 <= 100){
+                counter1 += 20
+            } else {
+                counter1 = 100
+            }
             survey.createSurveyWall { result in
                 delay(2) {
                     SVProgressHUD.dismiss()
                 }
                 switch result {
+                    
                 case .Completed:
-                    SVProgressHUD.showInfoWithStatus("'surveyWall': completed")
-                    return
+                    SVProgressHUD.showInfoWithStatus("Completed")
                 case .Canceled:
-                    SVProgressHUD.showInfoWithStatus("'surveyWall': canceled")
+                    SVProgressHUD.showInfoWithStatus("Canceled")
                 case .CreditEarned:
-                    SVProgressHUD.showInfoWithStatus("'surveyWall': credit earned")
+                    SVProgressHUD.showInfoWithStatus("Credit earned")
                 case .NetworkNotAvailable:
-                    SVProgressHUD.showInfoWithStatus("'surveyWall': network not available")
+                    SVProgressHUD.showInfoWithStatus("Network not available")
                 case .Skipped:
-                    SVProgressHUD.showInfoWithStatus("'surveyWall': skipped")
+                    SVProgressHUD.showInfoWithStatus("Skipped")
+                case .NoSurveyAvailable:
+                    SVProgressHUD.showInfoWithStatus("No survey available")
+                default:
+                    SVProgressHUD.showInfoWithStatus("no opp")
                 }
             }
         } else {
