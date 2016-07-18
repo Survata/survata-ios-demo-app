@@ -1,21 +1,5 @@
 # survata-ios-demo-app
 
-##Git merging rules
-
-To keep our repo clean, please follow these rules:
-
-Squash commits together so each commit represents one logical set of changes Use rebase and fast-forward to make sure we don’t get extra changes. The set of operations would be:
-
-```
-git checkout master
-git pull
-git checkout my-branchname
-git rebase -i master (...then squash commits together)
-git push origin my-branchname -f
-git checkout master
-git merge my-branchname --ff-only
-git push
-```
 
 ## 1. Clone the git repository locally. 
 
