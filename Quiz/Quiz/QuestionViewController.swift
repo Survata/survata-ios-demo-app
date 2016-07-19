@@ -226,6 +226,7 @@ class QuestionViewController: UIViewController {
             } else {
                 counter1 = 100
             }
+            lifeLabelTest.text = "\(counter1)%"
             survey.createSurveyWall { result in
                 delay(2) {
                     SVProgressHUD.dismiss()
