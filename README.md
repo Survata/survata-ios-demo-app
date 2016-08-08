@@ -1,6 +1,6 @@
 # survata-ios-demo-app
 
-## Demo app for the Survata SDK. iOS SDK is located [here](https://github.com/Survata/survata-ios-public-sdk).
+ Demo app for the Survata SDK. iOS SDK is located [here](https://github.com/Survata/survata-ios-public-sdk).
 
 ## 1. Clone the git repository locally. 
 
