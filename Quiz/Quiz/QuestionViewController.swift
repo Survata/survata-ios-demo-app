@@ -256,7 +256,7 @@ class QuestionViewController: UIViewController {
     
     func createSurvey() {
         if created { return }
-        let option = SurveyDebugOption(publisher: Settings.publisherId)
+        let option = SurveyOption(publisher: Settings.publisherId)
         if let demoMode = demoMode {
             if(demoMode){ // Demo Mode On
                 option.testing = true

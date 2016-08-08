@@ -11,9 +11,9 @@ import Survata
 
 
 public class SurveyDebugOption: SurveyOption, SurveyDebugOptionProtocol {
-    public var preview: String?
+    //public override var preview: String?
     public var zipcode: String?
-    public var testing: Bool?
+    //public override var testing: Bool?
     public var sendZipcode: Bool = true
     
 //    public var json: [String: AnyObject] {
