@@ -2,7 +2,7 @@ platform :ios, '8.0'
 
 use_frameworks!
 
-pod 'Survata', :git => 'git@github.com:Survata/survata-ios-public-sdk.git', :commit => '78c412f'
+pod 'Survata', :git => 'git@github.com:Survata/survata-ios-public-sdk.git'
 # pod 'Survata', :path => '../survata-ios-sdk'
 pod 'Greycats/Graphics'
 pod 'SVProgressHUD'
