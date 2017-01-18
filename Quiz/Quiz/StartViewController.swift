@@ -21,9 +21,9 @@ class StartViewController: UIViewController {
 
         // Do any additional setup after loading the view, typically from a nib.
     }
-    @IBAction func startQuiz(sender: UIButton) {
-        let questionViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("QuestionViewController") as! QuestionViewController
-        self.showViewController(questionViewController as! UIViewController, sender: questionViewController)
+    @IBAction func startQuiz(_ sender: UIButton) {
+        let questionViewController : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
+        self.show(questionViewController as! UIViewController, sender: questionViewController)
     }
     
 

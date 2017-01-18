@@ -40,53 +40,53 @@ class QuestionViewController: UIViewController {
     var survey: Survey!
     var currentQ: Question!
     var counter1:Int = 100
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var demoMode: Bool? {
         get {
-            return NSUserDefaults.standardUserDefaults().boolForKey("demoModeSettings")
+            return UserDefaults.standard.bool(forKey: "demoModeSettings")
         }
     }
     
    
-    @IBAction func goToSettingsPage(sender: UIButton) {
-        let settingsViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("SettingsTableViewController") as! SettingsTableViewController
-        self.showViewController(settingsViewController as! UIViewController, sender: settingsViewController)
+    @IBAction func goToSettingsPage(_ sender: UIButton) {
+        let settingsViewController : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "SettingsTableViewController") as! SettingsTableViewController
+        self.show(settingsViewController as! UIViewController, sender: settingsViewController)
 
     }
-    @IBAction func percentageSliderValueChanged(sender: UISlider) {
+    @IBAction func percentageSliderValueChanged(_ sender: UISlider) {
         percentage = Int(sender.value)
         percentageLabel.text = "\(percentage)"
     }
-    func randomInt(min: Int, max:Int) -> Int {
+    func randomInt(_ min: Int, max:Int) -> Int {
         return min + Int(arc4random_uniform(UInt32(max - min + 1)))
     }
     
-    func storePercentage(currentInd: Int, percentage: Int) -> Int {
+    func storePercentage(_ currentInd: Int, percentage: Int) -> Int {
         entered[currentInd] = percentage
         return percentage
     }
     
-    @IBAction func nextQuestion(sender: UIButton) {
-        var guess = storePercentage(ind, percentage: Int(percentageSlider.value))
-        var difference = abs(guess - actualPercentages[ind])
+    @IBAction func nextQuestion(_ sender: UIButton) {
+        let guess = storePercentage(ind, percentage: Int(percentageSlider.value))
+        let difference = abs(guess - actualPercentages[ind])
         var randomNumber = randomInt(0, max: entered.count)
         if (counter1 - difference <= 0){
             lifeLabelTest.text = "0%"
-            let scoreViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("ScoreViewController") as! ScoreViewController
-            self.showViewController(scoreViewController as! UIViewController, sender: scoreViewController)
+            let scoreViewController : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "ScoreViewController") as! ScoreViewController
+            self.show(scoreViewController as! UIViewController, sender: scoreViewController)
         } else {
             print(ind)
             qsAnswered += 1
             //percentageLabel.text = String(percentage)
             currentQ = questions[ind]
             if ind == entered.count - 1{
-                let scoreViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("ScoreViewController") as! ScoreViewController
+                let scoreViewController : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "ScoreViewController") as! ScoreViewController
                 
-                self.showViewController(scoreViewController as! UIViewController, sender: scoreViewController)
+                self.show(scoreViewController as! UIViewController, sender: scoreViewController)
             } else {
                 counter1 -= difference
                 lifeLabelTest.text = "\(counter1)%"
-                randomNumber = randomInt(0, max: entered.count)
+                randomNumber = randomInt(0, max: entered.count - 1)
                 ind = randomNumber
                 currentQ = questions[ind]
                 questionLabel.text = currentQ.name
@@ -96,10 +96,10 @@ class QuestionViewController: UIViewController {
     }
    
     
-    func checkIfEnd(counter1: Int){
+    func checkIfEnd(_ counter1: Int){
         
-        let scoreViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("ScoreViewController") as! ScoreViewController
-        self.showViewController(scoreViewController as! UIViewController, sender: scoreViewController)
+        let scoreViewController : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "ScoreViewController") as! ScoreViewController
+        self.show(scoreViewController as! UIViewController, sender: scoreViewController)
     }
     
     
@@ -107,7 +107,7 @@ class QuestionViewController: UIViewController {
         
         lifeLabelTest.text = "\(counter1)%"
         takeSurveyLabel.text = "Take a survey to increase your life by 20%!"
-        surveyIndicator.hidden = true
+        surveyIndicator.isHidden = true
         loadSampleQuestions()
     }
 
@@ -173,53 +173,51 @@ class QuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var created = false
     var locationManager: CLLocationManager!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        createSurvey()
+        checkSurvey()
     }
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .AuthorizedWhenInUse {
-            createSurvey()
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            checkSurvey()
         }
-        if status != .NotDetermined {
+        if status != .notDetermined {
             locationManager = nil
         }
     }
     
-    override func canBecomeFirstResponder() -> Bool {
+    override var canBecomeFirstResponder : Bool {
         return true
     }
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        if motion == .MotionShake {
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
             if presentedViewController != nil { return }
-            let controller = UIAlertController(title: "Reset Demo?", message: nil, preferredStyle: .Alert)
-            let option = UIAlertAction(title: "Reset", style: .Destructive) {[weak self] _ in
-                guard let window = self?.view.window, storyboard = self?.storyboard else { return }
-                NSHTTPCookieStorage.sharedHTTPCookieStorage().removeCookiesSinceDate(NSDate(timeIntervalSince1970: 0))
+            let controller = UIAlertController(title: "Reset Demo?", message: nil, preferredStyle: .alert)
+            let option = UIAlertAction(title: "Reset", style: .destructive) {[weak self] _ in
+                guard let window = self?.view.window, let storyboard = self?.storyboard else { return }
+                HTTPCookieStorage.shared.removeCookies(since: Date(timeIntervalSince1970: 0))
                 window.rootViewController = storyboard.instantiateInitialViewController()
             }
             controller.addAction(option)
-            controller.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            presentViewController(controller, animated: true, completion: nil)
+            controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            present(controller, animated: true, completion: nil)
         }
     }
     
     func showFull() {
-        surveyMask.hidden = true
-        
+        surveyMask.isHidden = true
     }
     
     func showSurveyButton() {
         surveyIndicator.stopAnimating()
     }
     
-    @IBAction func startSurvey(sender: UIButton) {
+    @IBAction func startSurvey(_ sender: UIButton) {
         if (survey != nil){
             if(counter1 + 20 <= 100){
                 counter1 += 20
@@ -228,34 +226,32 @@ class QuestionViewController: UIViewController {
             }
             lifeLabelTest.text = "\(counter1)%"
             survey.createSurveyWall { result in
-                delay(2) {
+                let _ = delay(2) {
                     SVProgressHUD.dismiss()
                 }
                 switch result {
                     
-                case .Completed:
-                    SVProgressHUD.showInfoWithStatus("Completed")
-                case .Canceled:
-                    SVProgressHUD.showInfoWithStatus("Canceled")
-                case .CreditEarned:
-                    SVProgressHUD.showInfoWithStatus("Credit earned")
-                case .NetworkNotAvailable:
-                    SVProgressHUD.showInfoWithStatus("Network not available")
-                case .Skipped:
-                    SVProgressHUD.showInfoWithStatus("Skipped")
-                case .NoSurveyAvailable:
-                    SVProgressHUD.showInfoWithStatus("No survey available")
-                default:
-                    SVProgressHUD.showInfoWithStatus("no opp")
+                case .completed:
+                    SVProgressHUD.showInfo(withStatus: "Completed")
+                case .canceled:
+                    SVProgressHUD.showInfo(withStatus: "Canceled")
+                case .creditEarned:
+                    SVProgressHUD.showInfo(withStatus: "Credit earned")
+                case .networkNotAvailable:
+                    SVProgressHUD.showInfo(withStatus: "Network not available")
+                case .skipped:
+                    SVProgressHUD.showInfo(withStatus: "Skipped")
+                case .noSurveyAvailable:
+                    SVProgressHUD.showInfo(withStatus: "No survey available")
                 }
+                self.checkSurvey()
             }
         } else {
             print("survey is nil")
         }
     }
     
-    func createSurvey() {
-        if created { return }
+    func checkSurvey() {
         let option = SurveyOption(publisher: Settings.publisherId)
         if let demoMode = demoMode {
             if(demoMode){ // Demo Mode On
@@ -263,40 +259,30 @@ class QuestionViewController: UIViewController {
                 option.preview = "5fd725139884422e9f1bb28f776c702d"// preview id for fixed survata survey
             }
         } else { // if demoMode == nil, just assume regular mode
-            option.contentName = String(NSDate())
+            option.contentName = String(describing: Date())
         }
 
-        option.contentName = String(NSDate())
+        option.contentName = String(describing: Date())
         
         survey = Survey(option: option)
         
         survey.create {[weak self] result in
-            self?.created = true
             switch result {
-            case .Available:
+            case .available:
                 self?.showSurveyButton()
-            case .NotAvailable:
-                print("NOT AVAILABLE")
-                print(self)
+                self?.takeSurveyButton.isHidden = false
+                self?.takeSurveyLabel.isHidden = false
+            case .notAvailable:
+                self?.takeSurveyButton.isHidden = true
+                self?.takeSurveyLabel.isHidden = true
+                print(self ?? "Debug reference unavailable.")
+
             default:
                 print(result)
-                self?.showFull()
-            }
+                self?.takeSurveyButton.isHidden = true
+                self?.takeSurveyLabel.isHidden = true
+
+			}
         }
     }
-    
-    func checkSurvey() {
-        let publisher = "a152f0c5-0ba4-4b3e-8a0a-07ec9f96c5fd"
-        let option = SurveyOption(publisher: Settings.publisherId)
-        survey.create { availability in
-            if availability == .Available {
-                print("survey is created")
-            } else {
-                
-            }
-        }
-    }
-
-    
-
 }

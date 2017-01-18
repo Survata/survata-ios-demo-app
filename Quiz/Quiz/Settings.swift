@@ -33,13 +33,13 @@ class Field: FormField {
 	}
 	
 	func setToggle() {
-		toggleSwitch?.hidden = !hasToggle
+		toggleSwitch?.isHidden = !hasToggle
 	}
 	
-	@IBAction func didToggle(sender: AnyObject) {
-		onToggle?(toggleSwitch.on)
-		fieldHeight.constant = toggleSwitch.on ? 32 : 0
-		UIView.animateWithDuration(0.25) { self.layoutIfNeeded() }
+	@IBAction func didToggle(_ sender: AnyObject) {
+		onToggle?(toggleSwitch.isOn)
+		fieldHeight.constant = toggleSwitch.isOn ? 32 : 0
+		UIView.animate(withDuration: 0.25) { self.layoutIfNeeded() }
 	}
 }
 
@@ -50,7 +50,7 @@ class SettingsViewController: UIViewController {
 	@IBOutlet weak var zipcodeField: Field!
 	
 	override func viewDidLoad() {
-		[publisherIdField, previewField, contentNameField, zipcodeField].createForm(self)
+		let _ = [publisherIdField, previewField, contentNameField, zipcodeField].createForm(self)
 		contentNameField.onToggle = {[weak self] on in
 			if !on {
 				Settings.contentName = nil
@@ -64,9 +64,20 @@ class SettingsViewController: UIViewController {
 	@IBAction func reset() {
 		Settings.publisherId = "a152f0c5-0ba4-4b3e-8a0a-07ec9f96c5fd"
 		Settings.previewId = nil//"5fd725139884422e9f1bb28f776c702d"
-		publisherIdField.bind(&Settings.publisherId)
-		previewField.bind(&Settings.previewId)
-		contentNameField.bind(&Settings.contentName)
-		zipcodeField.bind(&Settings.forceZipcode)
+        bindSettingToFormField(setting: Settings.publisherId, field: publisherIdField)
+        bindSettingToFormField(setting: Settings.previewId, field: previewField)
+        bindSettingToFormField(setting: Settings.contentName, field: contentNameField)
+        bindSettingToFormField(setting: Settings.forceZipcode, field: zipcodeField)
+
 	}
+    
+    func bindSettingToFormField(setting: String!, field: Field!) {
+        /**
+        Workaround because Swift3 no longer allows the loose automatic pointer casting this was relying on
+        */
+        var setting: String? = setting
+        withUnsafeMutablePointer(to: &setting) { settingReference in
+            field.bind(settingReference)
+        }
+    }
 }

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/theresagao/Desktop/code/quiz-ui-ios-master 2/Quiz/Survata Says.xcodeproj">
+      location = "container:/Users/gjlondon/programming/projects/survata-ios-demo-app/Quiz/Survata Says.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

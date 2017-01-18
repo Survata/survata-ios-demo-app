@@ -17,9 +17,9 @@ class DemoViewController: UIViewController, CLLocationManagerDelegate {
     
     var created = false
 	var locationManager: CLLocationManager!
-	override func viewWillAppear(animated: Bool) {
+	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		if CLLocationManager.authorizationStatus() == .NotDetermined {
+		if CLLocationManager.authorizationStatus() == .notDetermined {
 			locationManager = CLLocationManager()
 			locationManager.delegate = self
 			locationManager.requestWhenInUseAuthorization()
@@ -28,45 +28,43 @@ class DemoViewController: UIViewController, CLLocationManagerDelegate {
 		}
 	}
 	
-	func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-		if status == .AuthorizedWhenInUse {
+	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+		if status == .authorizedWhenInUse {
 			createSurvey()
 		}
-		if status != .NotDetermined {
+		if status != .notDetermined {
 			locationManager = nil
 		}
 	}
 	
-	override func canBecomeFirstResponder() -> Bool {
-		return true
-	}
+	override var canBecomeFirstResponder: Bool { return true }
 	
-	override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-		if motion == .MotionShake {
+	override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+		if motion == .motionShake {
 			if presentedViewController != nil { return }
-			let controller = UIAlertController(title: "Reset Demo?", message: nil, preferredStyle: .Alert)
-			let option = UIAlertAction(title: "Reset", style: .Destructive) {[weak self] _ in
-				guard let window = self?.view.window, storyboard = self?.storyboard else { return }
-				NSHTTPCookieStorage.sharedHTTPCookieStorage().removeCookiesSinceDate(NSDate(timeIntervalSince1970: 0))
+			let controller = UIAlertController(title: "Reset Demo?", message: nil, preferredStyle: .alert)
+			let option = UIAlertAction(title: "Reset", style: .destructive) {[weak self] _ in
+				guard let window = self?.view.window, let storyboard = self?.storyboard else { return }
+				HTTPCookieStorage.shared.removeCookies(since: NSDate(timeIntervalSince1970: 0) as Date)
 				window.rootViewController = storyboard.instantiateInitialViewController()
 			}
 			controller.addAction(option)
-			controller.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-			presentViewController(controller, animated: true, completion: nil)
+			controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+			present(controller, animated: true, completion: nil)
 		}
 	}
 	
 	func showFull() {
-		surveyMask.hidden = true
+		surveyMask.isHidden = true
 	}
 	
 	func showSurveyButton() {
-		surveyMask.hidden = false
-		surveyButton.hidden = false
+		surveyMask.isHidden = false
+		surveyButton.isHidden = false
 		surveyIndicator.stopAnimating()
 	}
 	
-    @IBAction func startSurvey(sender: UIButton) {
+    @IBAction func startSurvey(_ sender: UIButton) {
         
     }
     

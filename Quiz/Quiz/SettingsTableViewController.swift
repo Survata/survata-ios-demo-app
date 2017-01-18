@@ -16,14 +16,14 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var goBackButton: UIButton!
     @IBOutlet weak var footerView: UIView!
     
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let demoModeKey = "demoModeSettings"
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        demoModeSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey(demoModeKey)
+        demoModeSwitch.isOn = UserDefaults.standard.bool(forKey: demoModeKey)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,24 +33,24 @@ class SettingsTableViewController: UITableViewController {
     }
 
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
 
-    @IBAction func demoModeChanged(sender: UISwitch) {
-        demoModeSwitch.on = (sender as UISwitch).on
-        NSUserDefaults.standardUserDefaults().setBool(demoModeSwitch.on, forKey: demoModeKey)
-        NSUserDefaults.standardUserDefaults().synchronize()
+    @IBAction func demoModeChanged(_ sender: UISwitch) {
+        demoModeSwitch.isOn = (sender as UISwitch).isOn
+        UserDefaults.standard.set(demoModeSwitch.isOn, forKey: demoModeKey)
+        UserDefaults.standard.synchronize()
 
     }
-    @IBAction func saveChangesAndGoBack(sender: UIButton) {
-        NSUserDefaults.standardUserDefaults().synchronize()
-        let questionViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("QuestionViewController") as! QuestionViewController
-        self.showViewController(questionViewController as! UIViewController, sender: questionViewController)
+    @IBAction func saveChangesAndGoBack(_ sender: UIButton) {
+        UserDefaults.standard.synchronize()
+        let questionViewController : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
+        self.show(questionViewController as! UIViewController, sender: questionViewController)
     }
     
     

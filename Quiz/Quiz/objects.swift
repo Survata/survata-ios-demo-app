@@ -10,11 +10,11 @@ import Foundation
 import Survata
 
 
-public class SurveyDebugOption: SurveyOption, SurveyDebugOptionProtocol {
+open class SurveyDebugOption: SurveyOption, SurveyDebugOptionProtocol {
     //public override var preview: String?
-    public var zipcode: String?
+    open var zipcode: String?
     //public override var testing: Bool?
-    public var sendZipcode: Bool = true
+    open var sendZipcode: Bool = true
     
 //    public var json: [String: AnyObject] {
 //        var option = super.json
@@ -55,13 +55,13 @@ struct Respondent {
 }
 
 struct SurveyData {
-    let created: NSDate
+    let created: Date
     let publisherUuid: String
     let respondent: Respondent?
     
     init?(json: [String: AnyObject]) {
-        if let valid = json["valid"] as? Int where valid == 1 {
-            created = json["created"] as! NSDate
+        if let valid = json["valid"] as? Int, valid == 1 {
+            created = json["created"] as! Date
             publisherUuid = json["publisherUuid"] as! String
             if let respondentDic = json["respondent"] as? [String: AnyObject] {
                 respondent = Respondent(json: respondentDic)

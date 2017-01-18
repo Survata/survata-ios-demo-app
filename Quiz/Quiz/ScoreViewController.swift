@@ -17,18 +17,18 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         whatHappenedLabel.sizeToFit()
         whatHappenedLabel.text = "You managed to answer " + String(qsAnswered) + " questions!"
-        playAgainButton.backgroundColor = UIColor.whiteColor()
+        playAgainButton.backgroundColor = UIColor.white
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    @IBAction func playAgain(sender: UIButton) {
-        let questionViewController : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier("QuestionViewController") as! QuestionViewController
+    @IBAction func playAgain(_ sender: UIButton) {
+        let questionViewController : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "QuestionViewController") as! QuestionViewController
         qsAnswered = 0
         for key in entered.keys {
             entered[key] = 0
         }
         
-        self.showViewController(questionViewController as! UIViewController, sender: questionViewController)
+        self.show(questionViewController as! UIViewController, sender: questionViewController)
     }
     
     override func didReceiveMemoryWarning() {

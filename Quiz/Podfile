@@ -3,10 +3,8 @@ platform :ios, '8.0'
 use_frameworks!
 
 target “Survata Says” do
-    pod 'Survata', :git => 'git@github.com:Survata/survata-ios-public-sdk.git'
-    # pod 'Survata', :path => '../survata-ios-sdk'
-    pod 'Greycats', :git => 'git@github.com:greycats/Greycats.swift.git', :branch => 'swift2'
+	pod 'Survata', :git => 'git@github.com:Survata/survata-ios-public-sdk.git'
+    pod 'Greycats', :git => 'git@github.com:greycats/Greycats.swift.git'
     pod 'SVProgressHUD'
-    #    pod 'Greycats/FormField', :git => 'git@github.com:greycats/Greycats.swift.git', :branch => 'swift2'#, '~> 2.4.1'
-    pod 'HockeySDK', '~> 3.8.5'
+	pod 'HockeySDK', '~> 3.8.5'
 end
