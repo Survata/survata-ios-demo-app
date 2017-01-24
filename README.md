@@ -54,11 +54,12 @@ func createSurvey() {
 ```
 
 #### Explaining contentName 
-The contentName property is optional. It enforces that there is one survey per respondent per contentName. For example, if using a survey to unlock a level in a game or an e-book, it allows the publisher to offload enforcing that unlocking to be permanent onto us. 
+`option.contentName` enforces that there is one survey per respondent per contentName. For example, if using a survey to unlock a level in a game or an e-book, it allows the publisher to offload enforcing that unlocking to be permanent onto us. 
 
 For example, if there's a game and there's a level 7. If a person playing the game has already earned the survey for level 7, if they request a survey for level 7 again, it shows that they already earned it. 
 
-If you're not doing something like unlocking a level, you don't need to use contentName. If you want to limit for example, one survey per day, you could use something as the date for the contentName. 
+You can pass a timestamp as the contentName if you would like to handle the logic of content availability on your side.
+ * If you do not set contentName, a user will only ever be able to take one survey.
 
 #### IMPORTANT NOTE
 
