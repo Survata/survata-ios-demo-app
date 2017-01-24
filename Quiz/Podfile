@@ -1,12 +1,15 @@
+# Uncomment the next line to define a global platform for your project
 platform :ios, '8.0'
 
-use_frameworks!
+target 'Survata Says' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
 
-target “Survata Says” do
-    pod 'Survata', :git => 'git@github.com:Survata/survata-ios-public-sdk.git'
-    # pod 'Survata', :path => '../survata-ios-sdk'
-    pod 'Greycats', :git => 'git@github.com:greycats/Greycats.swift.git', :branch => 'swift2'
-    pod 'SVProgressHUD'
-    #    pod 'Greycats/FormField', :git => 'git@github.com:greycats/Greycats.swift.git', :branch => 'swift2'#, '~> 2.4.1'
-    pod 'HockeySDK', '~> 3.8.5'
+  # Pods for Survata Says
+  pod 'Survata', :git => 'git@github.com:Survata/survata-ios-public-sdk.git'
+  # pod 'Survata', :path => '../survata-ios-sdk'
+  pod 'Greycats', :git => 'git@github.com:greycats/Greycats.swift.git', :branch => "swift2"
+  pod 'SVProgressHUD'
+  pod 'HockeySDK', '~> 3.8.5'
+
 end
