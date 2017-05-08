@@ -265,7 +265,7 @@ class QuestionViewController: UIViewController {
         option.contentName = String(describing: Date())
         
         survey = Survey(option: option)
-        
+
         survey.create {[weak self] result in
             switch result {
             case .available:
@@ -273,16 +273,27 @@ class QuestionViewController: UIViewController {
                 self?.takeSurveyButton.isHidden = false
                 self?.takeSurveyLabel.isHidden = false
             case .notAvailable:
-                self?.takeSurveyButton.isHidden = true
-                self?.takeSurveyLabel.isHidden = true
-                print(self ?? "Debug reference unavailable.")
-
+				if (self?.demoMode)! {
+					self?.showSurveyButton()
+					self?.takeSurveyButton.isHidden = false
+					self?.takeSurveyLabel.isHidden = false
+				} else {
+					self?.takeSurveyButton.isHidden = true
+					self?.takeSurveyLabel.isHidden = true
+					print(self ?? "Debug reference unavailable.")
+				}
             default:
-                print(result)
-                self?.takeSurveyButton.isHidden = true
-                self?.takeSurveyLabel.isHidden = true
-
+				if (self?.demoMode)! {
+					self?.showSurveyButton()
+					self?.takeSurveyButton.isHidden = false
+					self?.takeSurveyLabel.isHidden = false
+				} else {
+					print(result)
+					self?.takeSurveyButton.isHidden = true
+					self?.takeSurveyLabel.isHidden = true
+				}
 			}
         }
     }
+
 }
