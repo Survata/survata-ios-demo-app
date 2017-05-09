@@ -214,6 +214,8 @@ class QuestionViewController: UIViewController {
     }
     
     func showSurveyButton() {
+        self.takeSurveyButton.isHidden = false
+        self.takeSurveyLabel.isHidden = false
         surveyIndicator.stopAnimating()
     }
     
@@ -257,6 +259,7 @@ class QuestionViewController: UIViewController {
             if(demoMode){ // Demo Mode On
                 option.testing = true
                 option.preview = "5fd725139884422e9f1bb28f776c702d"// preview id for fixed survata survey
+                self.showSurveyButton()
             }
         } else { // if demoMode == nil, just assume regular mode
             option.contentName = String(describing: Date())
@@ -267,32 +270,28 @@ class QuestionViewController: UIViewController {
         survey = Survey(option: option)
 
         survey.create {[weak self] result in
-            switch result {
-            case .available:
-                self?.showSurveyButton()
-                self?.takeSurveyButton.isHidden = false
-                self?.takeSurveyLabel.isHidden = false
-            case .notAvailable:
-				if (self?.demoMode)! {
-					self?.showSurveyButton()
-					self?.takeSurveyButton.isHidden = false
-					self?.takeSurveyLabel.isHidden = false
-				} else {
-					self?.takeSurveyButton.isHidden = true
-					self?.takeSurveyLabel.isHidden = true
-					print(self ?? "Debug reference unavailable.")
-				}
-            default:
-				if (self?.demoMode)! {
-					self?.showSurveyButton()
-					self?.takeSurveyButton.isHidden = false
-					self?.takeSurveyLabel.isHidden = false
-				} else {
-					print(result)
-					self?.takeSurveyButton.isHidden = true
-					self?.takeSurveyLabel.isHidden = true
-				}
-			}
+            guard let strongSelf = self else {
+                print("Something went wrong")
+                return
+            }
+            if let demoMode = strongSelf.demoMode, demoMode {
+                strongSelf.showSurveyButton()
+                print("demo version")
+            } else {
+                switch result {
+                    case .available:
+                        strongSelf.showSurveyButton()
+                    case .notAvailable:
+                        strongSelf.takeSurveyButton.isHidden = true
+                        strongSelf.takeSurveyLabel.isHidden = true
+                        print("Debug reference unavailable.")
+
+                    default:
+                        print(result)
+                        strongSelf.takeSurveyButton.isHidden = true
+                        strongSelf.takeSurveyLabel.isHidden = true
+                }
+            }
         }
     }
 
