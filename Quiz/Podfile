@@ -3,9 +3,8 @@ platform :ios, '11.4'
 use_frameworks!
 
 target 'Survata Says' do
-	pod 'Survata', :git => 'git@github.com:Survata/survata-ios-public-sdk.git'
-    pod 'Greycats', :git => 'git@github.com:greycats/Greycats.swift.git'
+	pod 'Survata', :git => 'git@github.com:Survata/survata-ios-public-sdk.git', :branch => 'naomi-upgradeSwift'
+    pod 'Greycats'
     pod 'SVProgressHUD'
 	pod 'HockeySDK', '~> 3.8.5'
 end
-

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F5A728EE4863E68103C04B2 /* Pods_Survata_Says.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E9D7E0786FCA649ECFC749 /* Pods_Survata_Says.framework */; };
 		B58BFE811C965C8C002EC9F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58BFE801C965C8C002EC9F1 /* AppDelegate.swift */; };
 		B58BFE861C965C8C002EC9F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58BFE841C965C8C002EC9F1 /* Main.storyboard */; };
 		B58BFE881C965C8C002EC9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58BFE871C965C8C002EC9F1 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		10D7785BF2ABC691DBD72830 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		622C5EA7DB563E5516C7C4AA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A2E9D7E0786FCA649ECFC749 /* Pods_Survata_Says.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survata_Says.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31E2D264D71099FBCA5A29B /* Pods-Survata Says.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survata Says.release.xcconfig"; path = "Pods/Target Support Files/Pods-Survata Says/Pods-Survata Says.release.xcconfig"; sourceTree = "<group>"; };
 		B58BFE7D1C965C8C002EC9F1 /* Survata Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survata Says.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58BFE801C965C8C002EC9F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F5A728EE4863E68103C04B2 /* Pods_Survata_Says.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +70,7 @@
 		8E3EB61647BA3CAA2FC555FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2E9D7E0786FCA649ECFC749 /* Pods_Survata_Says.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
