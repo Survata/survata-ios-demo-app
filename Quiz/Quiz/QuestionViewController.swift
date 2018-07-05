@@ -9,7 +9,6 @@
 import UIKit
 import CoreLocation
 import SVProgressHUD
-import Greycats
 import Survata
 
 
@@ -27,7 +26,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var lifeView: UIView!
     @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var surveyIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var surveyMask: GradientView!
+    weak var surveyMask: GradientView!
     @IBOutlet weak var heart: UIImageView!
     @IBOutlet weak var lifeLabelTest: UILabel!
     @IBOutlet weak var settingsButton: UIButton!
@@ -228,7 +227,7 @@ class QuestionViewController: UIViewController {
             }
             lifeLabelTest.text = "\(counter1)%"
             survey.createSurveyWall { result in
-                let _ = delay(2) {
+                let _ = DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     SVProgressHUD.dismiss()
                 }
                 switch result {

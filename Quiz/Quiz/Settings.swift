@@ -5,8 +5,7 @@
 //  Created by Rex Sheng on 2/19/16.
 //  Copyright © 2016 InteractiveLabs. All rights reserved.
 //
-
-import Greycats
+import UIKit
 
 struct Settings {
 	static var publisherId: String! = "a152f0c5-0ba4-4b3e-8a0a-07ec9f96c5fd"

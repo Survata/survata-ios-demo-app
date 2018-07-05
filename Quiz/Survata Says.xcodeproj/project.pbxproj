@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F5A728EE4863E68103C04B2 /* Pods_Survata_Says.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E9D7E0786FCA649ECFC749 /* Pods_Survata_Says.framework */; };
+		9D9E589F20EED052008D8A6B /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E589E20EED052008D8A6B /* FormField.swift */; };
+		9D9E58A120EED08B008D8A6B /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E58A020EED08B008D8A6B /* NibView.swift */; };
+		9D9E58A320EED689008D8A6B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9E58A220EED689008D8A6B /* GradientView.swift */; };
 		B58BFE811C965C8C002EC9F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58BFE801C965C8C002EC9F1 /* AppDelegate.swift */; };
 		B58BFE861C965C8C002EC9F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58BFE841C965C8C002EC9F1 /* Main.storyboard */; };
 		B58BFE881C965C8C002EC9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58BFE871C965C8C002EC9F1 /* Assets.xcassets */; };
 		B58BFE8B1C965C8C002EC9F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58BFE891C965C8C002EC9F1 /* LaunchScreen.storyboard */; };
+		F6F5A5325C1DF73F60948D5A /* Pods_Survata_Says.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B702A4AB66C9E7F5700168C5 /* Pods_Survata_Says.framework */; };
 		FE0EAB581C98A2550018290E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0EAB551C98A2550018290E /* Question.swift */; };
 		FE0EAB5C1C98A4DF0018290E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0EAB5B1C98A4DF0018290E /* Settings.swift */; };
 		FE55FDC41D2EF56500D89EB0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55FDC31D2EF56500D89EB0 /* SettingsTableViewController.swift */; };
@@ -23,9 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10D7785BF2ABC691DBD72830 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		622C5EA7DB563E5516C7C4AA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		A2E9D7E0786FCA649ECFC749 /* Pods_Survata_Says.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survata_Says.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D9E589E20EED052008D8A6B /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		9D9E58A020EED08B008D8A6B /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		9D9E58A220EED689008D8A6B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		B31E2D264D71099FBCA5A29B /* Pods-Survata Says.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survata Says.release.xcconfig"; path = "Pods/Target Support Files/Pods-Survata Says/Pods-Survata Says.release.xcconfig"; sourceTree = "<group>"; };
 		B58BFE7D1C965C8C002EC9F1 /* Survata Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survata Says.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58BFE801C965C8C002EC9F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 		B58BFE871C965C8C002EC9F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B58BFE8A1C965C8C002EC9F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B58BFE8C1C965C8C002EC9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B702A4AB66C9E7F5700168C5 /* Pods_Survata_Says.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survata_Says.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B028A00E150A1A959DAA21 /* Pods-Survata Says.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survata Says.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Survata Says/Pods-Survata Says.debug.xcconfig"; sourceTree = "<group>"; };
 		FE0EAB551C98A2550018290E /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		FE0EAB5B1C98A4DF0018290E /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -49,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F5A728EE4863E68103C04B2 /* Pods_Survata_Says.framework in Frameworks */,
+				F6F5A5325C1DF73F60948D5A /* Pods_Survata_Says.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,8 +63,6 @@
 		4C841DAA0FE72DC8AB5204E8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				622C5EA7DB563E5516C7C4AA /* Pods.debug.xcconfig */,
-				10D7785BF2ABC691DBD72830 /* Pods.release.xcconfig */,
 				E6B028A00E150A1A959DAA21 /* Pods-Survata Says.debug.xcconfig */,
 				B31E2D264D71099FBCA5A29B /* Pods-Survata Says.release.xcconfig */,
 			);
@@ -70,7 +72,7 @@
 		8E3EB61647BA3CAA2FC555FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A2E9D7E0786FCA649ECFC749 /* Pods_Survata_Says.framework */,
+				B702A4AB66C9E7F5700168C5 /* Pods_Survata_Says.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,11 +99,14 @@
 			isa = PBXGroup;
 			children = (
 				FE7107221C9B5F55008988A9 /* objects.swift */,
+				9D9E589E20EED052008D8A6B /* FormField.swift */,
+				9D9E58A020EED08B008D8A6B /* NibView.swift */,
 				FE0EAB551C98A2550018290E /* Question.swift */,
 				FE7107261C9C82A4008988A9 /* StartViewController.swift */,
 				FECC387A1CF3CC5B0043F4F0 /* QuestionViewController.swift */,
 				FE7107241C9C7CF2008988A9 /* ScoreViewController.swift */,
 				FEC7BEB11C9B4F6700E481DE /* Demo.swift */,
+				9D9E58A220EED689008D8A6B /* GradientView.swift */,
 				FE0EAB5B1C98A4DF0018290E /* Settings.swift */,
 				B58BFE801C965C8C002EC9F1 /* AppDelegate.swift */,
 				B58BFE841C965C8C002EC9F1 /* Main.storyboard */,
@@ -229,13 +234,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Survata Says/Pods-Survata Says-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Greycats/Greycats.framework",
+				"${BUILT_PRODUCTS_DIR}/STRegex/Regex.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Survata/Survata.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Greycats.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Regex.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Survata.framework",
 			);
@@ -251,9 +256,11 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Survata.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Regex.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Survata.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Regex.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -266,10 +273,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D9E589F20EED052008D8A6B /* FormField.swift in Sources */,
 				FE0EAB5C1C98A4DF0018290E /* Settings.swift in Sources */,
+				9D9E58A320EED689008D8A6B /* GradientView.swift in Sources */,
 				FE0EAB581C98A2550018290E /* Question.swift in Sources */,
 				FE7107231C9B5F55008988A9 /* objects.swift in Sources */,
 				FE7107271C9C82A4008988A9 /* StartViewController.swift in Sources */,
+				9D9E58A120EED08B008D8A6B /* NibView.swift in Sources */,
 				FEC7BEB21C9B4F6700E481DE /* Demo.swift in Sources */,
 				FECC387B1CF3CC5B0043F4F0 /* QuestionViewController.swift in Sources */,
 				B58BFE811C965C8C002EC9F1 /* AppDelegate.swift in Sources */,
