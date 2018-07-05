@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XDv-6g-zyb">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XDv-6g-zyb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -35,7 +35,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Play!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewI-Xg-zwW">
-                                <rect key="frame" x="81" y="181" width="214" height="58"/>
+                                <rect key="frame" x="84.5" y="181.5" width="207.5" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP7-In-8e5">
-                                <rect key="frame" x="153" y="379" width="68" height="53"/>
+                                <rect key="frame" x="154" y="379" width="66" height="53"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <state key="normal" title="start">
                                     <color key="titleColor" red="0.0" green="0.46666666670000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -610,9 +610,7 @@
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="agz-C5-z07" secondAttribute="trailing" id="vVb-8E-35E"/>
                             <constraint firstItem="HfF-gu-Yci" firstAttribute="leading" secondItem="qyw-OH-h9K" secondAttribute="leadingMargin" constant="-23" id="vZ0-CA-0gy"/>
-                            <constraint firstItem="8kv-wC-IbP" firstAttribute="top" secondItem="aZj-Uf-BeB" secondAttribute="bottom" constant="48" id="vwe-N4-hYm"/>
                             <constraint firstItem="agz-C5-z07" firstAttribute="top" secondItem="qyw-OH-h9K" secondAttribute="topMargin" id="xI1-Mg-rR0"/>
-                            <constraint firstItem="aZj-Uf-BeB" firstAttribute="top" secondItem="yKh-QK-LOj" secondAttribute="bottom" constant="42" id="yfE-h6-Zp6"/>
                             <constraint firstItem="ssz-kb-hAi" firstAttribute="centerX" secondItem="qyw-OH-h9K" secondAttribute="centerX" id="ysd-GV-vJf"/>
                             <constraint firstItem="xrV-og-QtX" firstAttribute="centerX" secondItem="qyw-OH-h9K" secondAttribute="centerX" id="z5S-5x-rWt"/>
                         </constraints>
@@ -686,7 +684,6 @@
                                 <exclude reference="M4g-5S-mbl"/>
                                 <exclude reference="Tng-Rx-aUS"/>
                                 <exclude reference="d9g-X1-uYF"/>
-                                <exclude reference="yfE-h6-Zp6"/>
                                 <exclude reference="22E-VY-Bib"/>
                                 <exclude reference="Cgb-4s-6V8"/>
                                 <exclude reference="Ch1-rK-nbS"/>
@@ -696,7 +693,6 @@
                                 <exclude reference="gmX-hO-TYT"/>
                                 <exclude reference="n1P-Md-ShS"/>
                                 <exclude reference="o42-xY-NRH"/>
-                                <exclude reference="vwe-N4-hYm"/>
                                 <exclude reference="S7w-om-JRj"/>
                                 <exclude reference="XJT-0k-YO6"/>
                             </mask>
@@ -810,8 +806,6 @@
                                 <include reference="0cV-cN-x99"/>
                                 <include reference="6z4-OJ-rBs"/>
                                 <exclude reference="d9g-X1-uYF"/>
-                                <include reference="yfE-h6-Zp6"/>
-                                <include reference="vwe-N4-hYm"/>
                             </mask>
                         </variation>
                     </view>
@@ -845,7 +839,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="lbS-5J-d3r">
-                                <rect key="frame" x="-51" y="-48" width="466" height="741"/>
+                                <rect key="frame" x="-51" y="-28" width="466" height="721"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You managed to answer 7 questions!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="VTp-3q-UBH">
@@ -916,7 +910,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Pwf-qd-nMA">
-                            <rect key="frame" x="0.0" y="142" width="375" height="128"/>
+                            <rect key="frame" x="0.0" y="141.5" width="375" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7D-ej-PnX">
@@ -963,10 +957,10 @@
                             <tableViewSection headerTitle="Demo Mode" id="s3C-s0-LOh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DemoModeCell" selectionStyle="default" indentationWidth="10" rowHeight="68" id="1VC-ba-zWk">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="68"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1VC-ba-zWk" id="he8-04-1Vh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Show a default Survata survey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5s-oI-QaF">
