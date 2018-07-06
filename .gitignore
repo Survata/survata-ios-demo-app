@@ -23,3 +23,5 @@ Pods/
 Podfile.lock
 *.xcworkspace/
 InfoPlist.h
+#Carthage
+Quiz/Carthage/

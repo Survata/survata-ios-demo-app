@@ -1,0 +1,2 @@
+github "Survata/survata-ios-public-sdk" "swift-4"
+github "sharplet/Regex" ~> 1.1
